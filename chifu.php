@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* CSS styles for the page layout and elements */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            padding: 10px;
+        }
+
+        nav {
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 10px;
+            padding: 5px;
+        }
+
+        main {
+            max-width: 800px;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        #progress {
+            width: 100%;
+            background-color: silver;
+            height: 30px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+        #bar {
+            width: 0%;
+            background-color: #333;
+            height: 100%;
+            text-align: center;
+            line-height: 30px;
+            color: white;
+            border-radius: 5px;
+        }
+
+        #search-input {
+            float: right;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+             #flag {
+            width: 100px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #greeting {
+            text-align: center;
+            color: #333;
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.PHP">Home</a>
+            <a href="about.PHP">Skills</a>
+            <a href="services.PHP">project</a>
+            <a href="contact.PHP">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <div id="greeting"><button onclick="greeting()">greeetingS</button></div>
+        <h3>JavaScript Progress Bar</h3>
+        <div id="progress">
+            <div id="bar"></div>
+        </div>
+        <button onclick="move()">Click Me to See Project Completion</button>
+        <p>Click the button above to see the progress of my projects.</p>
+
+        
+        <ul id="search-results"><input type="text" id="search-input" placeholder="Search..."></ul>
+
+            <form id="contact-form">
+                <input type="email"name="email" placeholder="email" id="email"required><br>
+                <input type="text"id="name" placeholder="name" required><br>
+                <textarea id="message" placeholder="Please your comment is needed" required></textarea>
+                <input type="submit"></button>
+            </form>
+            
+            <div id="form-status"></div>
+    
+            <p style="color:white;font-size:large;text-align:center;">My name is NJEWA Chifundo bict2521.<br>A student studying ICT at Mzuzu University.</p>
+            <marquee>
+                <img src="njala.jpg" width="400" height="400">
+            </marquee>
+    
+            <h1 style="text-transform: uppercase;color:white;">This is social media link</h1>
+            <center>
+                <a href="https://www.mzuni.ac.mw">
+                    <span style="color:white;"><h3>mzuni</h3></span>
+                </a>
+            </center>
+    
+            <script>
+                var i = 0;
+                function move() {
+                    if (i == 0) {
+                        i = 1;
+                    }
+                    var j = document.getElementById("bar");
+                    var width = 1;
+                    var id = setInterval(frame, 50);
+                    function frame() {
+                        if (width >= 63) {
+                            clearInterval(id);
+                            i = 0;
+                        } else {
+                            width++;
+                            j.style.width = width + "%";
+                            j.innerHTML = width + "%";
+                        }
+                    }
+                }
+            </script>
+    
+
+    <script>        
+    function greeting(){
+const greetingElement = document.getElementById('greeting');
+const currentHour = new Date().getHours();
+
+let greeting;
+
+if (currentHour <= 0) {
+greeting = 'Good morning';
+} else if (currentHour >0 && currentHour<= 16) {
+greeting = 'Good afternoon';
+} else if(currentHour>16&&currentHour<=20){
+greeting = 'Good evening';
+}else{
+greeting="good night";
+}
+
+greetingElement.textContent = greeting;}
+</script>
+            <script>
+                const form = document.getElementById('contact-form');
+                const formStatus = document.getElementById('form-status');
+    
+                form.addEventListener('submit', function(event)) {
+                    event.preventDefault();
+                    const name = document.getElementById('name').value.trim();
+                    const email = document.getElementById('email').value.trim();}
+                    </script><footer>
+        
+            <div style="background_color:black ;">CONTACTS DETAILS </div>
+            
+                <ul >
+                    <li>     
+                        
+                        
+                     <span style ="color:black">  Whatsapp number 0884136487</span>  </li>
+                    <li>
+ <span style="color:black">Email : njewachifundo82@gmail.com</span>
+                    </li>
+                    <li><span style="color:black">
+Mobile number: 0994175809 </span>
+                    </li>
+                    <div>&copy; copy right </div>
+                </ul>
+            
+        
+    </footer>
+</body>
+</html>
+    
